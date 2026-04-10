@@ -26,6 +26,7 @@ function BreakdownStats({ balance, monthlyIncome, monthlyExpenses, expenses, onU
       const months = balanceNum / Math.abs(monthlyNet)
       return months.toFixed(1)
     }
+    if (monthlyNet > 0) return '∞ (Growing Wealth)'
     const months = balanceNum / monthlyNet
     return months.toFixed(1)
   }
@@ -98,10 +99,13 @@ function BreakdownStats({ balance, monthlyIncome, monthlyExpenses, expenses, onU
       </div>
 
       {parseFloat(balance || 0) < 0 && <p className="warning">⚠️ You're already broke!</p>}
-      {monthlyNet < 0 && <p className="warning">⚠️ Your expenses exceed your income!</p>}
-      {parseFloat(balance || 0) > 0 && monthlyNet > 0 && parseFloat(balance || 0) < monthlyNet && (
+      {monthlyNet < 0 && parseFloat(balance || 0) > 0 && parseFloat(balance || 0) < Math.abs(monthlyNet) && (
         <p className="warning">⚠️ Less than a month left!</p>
       )}
+      {monthlyNet < 0 && parseFloat(balance || 0) >= Math.abs(monthlyNet) && 
+      <p className="warning">⚠️ Your expenses exceed your income!</p>}
+      {monthlyNet > 0 && 
+      <p className="head-nod">✅ You're in the green! Keep it up!</p>}
     </div>
   )
 }

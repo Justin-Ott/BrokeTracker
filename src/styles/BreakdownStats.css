@@ -91,7 +91,7 @@
 }
 
 .stat-box {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #e017e4 0%, #df6e12 100%);
   color: white;
   padding: 20px;
   border-radius: 8px;
@@ -122,3 +122,15 @@
   font-weight: 500;
   text-align: center;
 }
+
+.head-nod {
+  margin-top: 16px;
+  padding: 12px;
+  background: #dfffca;
+  color: #20ce37;
+  border-left: 4px solid #20ce37;
+  border-radius: 4px;
+  font-weight: 500;
+  text-align: center;
+}
+

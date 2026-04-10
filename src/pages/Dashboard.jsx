@@ -49,9 +49,14 @@ function Dashboard() {
       <div className="dashboard-content">
         <div className="left-section">
           <ExpenseForm onAddExpense={handleAddExpense} />
+
+           <ExpenseList 
+            expenses={expenses}
+            onDeleteExpense={handleDeleteExpense}
+          />
         </div>
 
-        <div className="right-section">
+        <div className="center-section">
           <BreakdownStats 
             balance={balance}
             monthlyIncome={monthlyIncome}
@@ -60,10 +65,6 @@ function Dashboard() {
             onUpdateBalance={setBalance}
             onUpdateIncome={setMonthlyIncome}
             onUpdateMonthlyExpenses={setMonthlyExpenses}
-          />
-          <ExpenseList 
-            expenses={expenses}
-            onDeleteExpense={handleDeleteExpense}
           />
         </div>
       </div>
