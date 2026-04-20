@@ -1,4 +1,4 @@
-# BrokeTracker
+# [BrokeTracker](https://justin-ott.github.io/BrokeTracker/)
 
 A simple React web app to track your monthly expenses and see how long until you go broke.
 
